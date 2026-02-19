@@ -1,6 +1,11 @@
 * {
     box-sizing: border-box;
 }
+:root {
+    --font-heading: "Sen", sans-serif;
+    --primary-color: #ffb900;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -28,12 +33,15 @@ a {
     text-align: center;
     font-size: 1.6rem;
     font-weight: 600;
-    border-radius: 24.5px;
+    border-radius: 1000px;
     background: #171100;
     line-height: 50px;
     min-width: 118px;
 }
 
+.btn:hover {
+    opacity: .8;
+}
 /* ===============header============= */
 /* 
 ta thấy thẻ nav nằm giữa thẻ img và btn-action theo lí thuyết thì thẻ nav dùng
@@ -44,6 +52,7 @@ margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto ma
 }
 .header {
     background: #01fd4c7a; 
+    z-index: 1000;
 }
 /* position: sticky (bài 87.6) **** .header và .fixed phải viết liền nhau */
 .header.fixed {
@@ -92,4 +101,137 @@ margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto ma
 }
 .header .action {
     margin-left: 49px;
+}
+
+/* =============hero============ */
+.hero {
+    padding: 56px 0 65px;
+    background-color: #09dbf749;
+}
+.hero .body-hero {
+    display: flex;
+}
+
+/* ============ block left =========== */
+.hero .media-block {
+    width: 48%;
+    position: relative;
+}
+
+
+.hero .media-block .img {
+    width: 470px;
+    height: 685px;
+    object-fit: cover; /* không bị vỡ ảnh */
+    border-radius: 28px;
+}
+.hero .hero-summary {
+    /* dùng thẻ cha .hero .media-block là position: relative và con là position: absolute để con nằm đè lên cha */
+    bottom: 48px;
+    width: 270px;
+    padding: 24px;
+    position: absolute;
+    right: 0;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.05);
+    border: 2px solid black;
+}
+
+.hero-summary .item {
+    display: flex;
+    align-items: center;
+}
+
+.hero-summary .item + .item{ /* tác động vào class item nằm đằng sau class item khác */
+    margin-top: 15px;
+}
+.hero-summary .icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff9e8;
+}
+.hero-summary .icon2 {
+    background-color: #FCEFFF;
+}
+.hero-summary .icon3 {
+    background-color: #Ebeaff;
+}
+.hero-summary .info {
+    margin-left: 16px;
+}
+.hero-summary .label {
+    color: #5f5b53;
+    font-style: 1.4rem;
+    line-height: 1.86; /* 186% */
+}
+.hero-summary .title {
+    color: #171100;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px; /* 167% */
+}
+
+/* ================ block right ============== */
+
+.hero .content-block {
+    width: 52%;
+    padding-left: 130px;
+    padding-top: 64px;
+}
+.hero .heading {
+    color: #171100;
+    font-family: var(--font-heading);
+    font-size: 5.8rem;
+    font-weight: 700;
+    line-height: 1.17; /* 117% */
+    letter-spacing: -1.16px;
+}
+.hero .desc {
+    margin-top: 22px;
+    color: #5f5b53;
+    font-size: 1.8rem;
+    line-height: 1.67; /* 167% */
+}
+.hero .cta-group {
+    margin-top: 38px;
+    display: flex;
+    align-items: center;
+}
+.hero .hero-cta {
+    min-width: 180px;
+    line-height: 64px;
+    background-color: var(--primary-color);
+}
+.hero .watch-video {
+    border: none;
+    /* background: transparent; trong suốt */
+    display: flex;
+    align-items: center;
+    margin-left: 28px;
+    border-radius: 100px;
+    background-color: #fff;
+    padding: 12px;
+    cursor: pointer;
+}
+.hero .watch-video .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .watch-video span {
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67; /* 167% */
 }
