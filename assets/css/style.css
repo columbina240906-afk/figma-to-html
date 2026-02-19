@@ -7,4 +7,89 @@ html {
 /* khôi phục lại cỡ chữ mặc định theo rem */
 body {
     font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ===============common============= : áp dụng thuộc tính chung cho cả website*/
+a {
+    text-decoration: none; 
+}
+.main-content {
+    width: 1170px;
+    max-width: calc(100% - 48px); /* bài 85 : calc() function*/
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn {
+    /* bài 51 .btn đang dùng là thẻ a, mặc định của thẻ a là display: inline ==> chuyển đổi sang display: inline-block để thêm padding vào */
+    display: inline-block;
+    padding: 0 16px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 24.5px;
+    background: #171100;
+    line-height: 50px;
+    min-width: 118px;
+}
+
+/* ===============header============= */
+/* 
+ta thấy thẻ nav nằm giữa thẻ img và btn-action theo lí thuyết thì thẻ nav dùng
+margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto margin-left (bài 48.10)
+*/
+.nav { 
+    margin-left: auto;
+}
+.header {
+    background: #01fd4c7a; 
+}
+/* position: sticky (bài 87.6) **** .header và .fixed phải viết liền nhau */
+.header.fixed {
+    position: sticky;
+    top: -28px;
+}
+.header .body-header {
+    display: flex;
+    align-items: center;
+    padding: 36px 0 8px;
+}
+.nav ul {
+    display: flex;
+}
+
+
+.nav a {
+    color: #5F5B53;
+    position: relative;
+    font-style: 1.6rem;
+    /* background-color: blue; */
+    padding: 8px 21px; /* thay vì dùng margin thì dùng padding để tăng tương tác vs người dùng, khoảng cách di chuột lớn hơn*/
+}
+.nav li.active a, 
+.nav a:hover {
+    color: #171100;
+    /* font-weight: 600; */
+    /* bài 65 dùng text-shadow */
+    text-shadow: 1px 0 0 currentColor;
+}
+.nav li.active a::after {
+    content: "";
+    display: block; 
+    position: absolute;
+    left: 21px;
+    bottom: 6px;
+    /* display: inline-block; */
+    width: 12px;
+    height: 2px;
+    border-radius: 1px;
+    background: #171100;
+}
+
+.header .btn-sign-up {
+    min-width: 144px;
+}
+.header .action {
+    margin-left: 49px;
 }
