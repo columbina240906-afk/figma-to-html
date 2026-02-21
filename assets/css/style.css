@@ -42,6 +42,16 @@ a {
 .btn:hover {
     opacity: .8;
 }
+.heading-lv {
+    color: #171100;
+    font-family: var(--font-heading);
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.26; /* 126% */
+    letter-spacing: -.76px;
+
+}
+
 /* ===============header============= */
 /* 
 ta thấy thẻ nav nằm giữa thẻ img và btn-action theo lí thuyết thì thẻ nav dùng
@@ -255,4 +265,42 @@ margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto ma
 
 .hero .stats strong:nth-child(2) {
     margin-left: 28px;
+}
+.popular {
+    padding: 65px 0;
+    /* background-color: blue; */
+    margin-top: 135px;
+}
+.popular-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popular-top .desc {
+    margin-top: 16px;
+    width: 458px;
+    color: #5f5b53;
+    font-size: 1.8rem;
+    line-height: 1.67; /* 167% */
+}
+.popular-top .control-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+.popular-top .controls {
+    display: flex;
+    gap: 18px;
+}
+.popular-top .control-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
 }
