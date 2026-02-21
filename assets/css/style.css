@@ -51,13 +51,14 @@ margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto ma
     margin-left: auto;
 }
 .header {
-    background: #01fd4c7a; 
-    z-index: 1000;
+    background: #01fd4ddd; 
+    
 }
 /* position: sticky (bài 87.6) **** .header và .fixed phải viết liền nhau */
 .header.fixed {
     position: sticky;
     top: -28px;
+    z-index: 1;
 }
 .header .body-header {
     display: flex;
@@ -234,4 +235,24 @@ margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto ma
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.67; /* 167% */
+}
+
+.hero .desc-recent {
+    margin-top: 48px;
+
+}
+.hero .stats {
+    margin-top: 8px;
+}
+.hero .stats strong {
+    color: #171100;
+    font-weight: 700;
+    line-height: 1.23; /* 123% */
+    font-family: var(--font-heading);
+    font-size: 4.4rem;
+    margin-right: 15px;
+}
+
+.hero .stats strong:nth-child(2) {
+    margin-left: 28px;
 }
