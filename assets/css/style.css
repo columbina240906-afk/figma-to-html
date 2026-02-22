@@ -15,7 +15,8 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-/* ===============common============= : áp dụng thuộc tính chung cho cả website*/
+/* ============================================= common ========================================== : 
+áp dụng thuộc tính chung cho cả website*/
 a {
     text-decoration: none; 
 }
@@ -53,7 +54,23 @@ a {
 
 }
 
-/* ===============header============= */
+/* chuyển dài dòng thành ngắn có dấu 3 chấm */
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* đối với những thẻ muốn quá 2 dòng mới hiện dấu 3 chấm  */
+.line-clamp.line-2 { /* chỉ những thẻ có đồng thời 2 class mới dùng đc */
+    line-clamp: 2;
+}
+.break-all {
+    word-break: break-all;
+}
+
+/* ============================================ header ===================================== */
 /* 
 ta thấy thẻ nav nằm giữa thẻ img và btn-action theo lí thuyết thì thẻ nav dùng
 margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto margin-left (bài 48.10)
@@ -115,7 +132,7 @@ margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto ma
     margin-left: 49px;
 }
 
-/* =============hero============ */
+/* ================================================== hero ============================================ */
 .hero {
     padding: 56px 0 65px;
     background-color: #09dbf749;
@@ -124,7 +141,7 @@ margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto ma
     display: flex;
 }
 
-/* ============ block left =========== */
+/* ============================================== block left ==================================== */
 .hero .media-block {
     width: 48%;
     position: relative;
@@ -188,7 +205,7 @@ margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto ma
     line-height: 30px; /* 167% */
 }
 
-/* ================ block right ============== */
+/* ======================================= block right ==================================== */
 
 .hero .content-block {
     width: 52%;
@@ -267,6 +284,8 @@ margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto ma
 .hero .stats strong:nth-child(2) {
     margin-left: 28px;
 }
+
+/* ================================================== popular ================================================ */
 .popular {
     padding: 65px 0;
     /* background-color: blue; */
@@ -313,6 +332,7 @@ margin-left thì các thẻ đồng cấp phía sau cũng bị lôi theo auto ma
     gap: 30px;
 }
 .popular .course-item {
+    flex: 1;
     border-radius: 12px;
     background: #fff;
     border: 1px solid #e2dfda
